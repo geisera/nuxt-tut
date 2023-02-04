@@ -10,7 +10,7 @@
 
 <script setup>
 //import Tailwind from '~~/layouts/tailwind.vue';
-    definePageMeta({
-        layout: 'tailwind'
-    })
+    // definePageMeta({
+    //     layout: 'tailwind'
+    // })
 </script>
