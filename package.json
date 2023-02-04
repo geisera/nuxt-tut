@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.3.0",
+    "nuxt": "^3.1.0"
+  },
+  "dependencies": {
+    "@headlessui/tailwindcss": "^0.1.2",
+    "@headlessui/vue": "^1.7.8",
+    "@heroicons/vue": "^2.0.14",
+    "firebase": "^9.17.1"
+  }
+}
