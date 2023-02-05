@@ -5,7 +5,7 @@ import {
     onAuthStateChanged,
  } from "firebase/auth";
 
-export const createUser = async ( email:any, password:any ) => {
+export const createUser = async ( email, password ) => {
     const auth = getAuth();
     const credentials = await createUserWithEmailAndPassword(auth, email, password)
     .catch((error) => {
@@ -15,7 +15,7 @@ export const createUser = async ( email:any, password:any ) => {
     return credentials;
 }
 
-export const signInUser = async (email:any, password:any) => {
+export const signInUser = async (email, password) => {
     const auth = getAuth();
     const credentials = await signInWithEmailAndPassword(auth, email, password)
     .catch((error) => {
@@ -27,16 +27,20 @@ export const signInUser = async (email:any, password:any) => {
 
 export const initializeUser = async () => {
     const auth = getAuth();
+    const firebaseUser = useFirebaseUser();
+    firebaseUser.value = auth.currentUser;
+
     onAuthStateChanged(auth, (user) => {
         if (user) {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/firebase.User
             const uid = user.uid;
-            console.log(user);
+            //console.log('Auth changed: ', user);
         } else {
-            // User is signed out
-            // ...
+            //console.log('No auth change!');
         }
+
+        firebaseUser.value = user;
     });
 }
 export const signOutUser = async () => {

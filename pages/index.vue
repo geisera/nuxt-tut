@@ -1,13 +1,5 @@
 <template>
     <div>
-        <button class="flex btn" @click="signIn">Sign In</button>
-        <button class="flex btn" @click="signOut">Sign Out</button>
-        <pre>
-            {{ credentials }}
-        </pre>
-        <Login />
-    </div>
-    <div>
         <h2>Home</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, ipsa porro dicta quia id nulla fugit. Aliquam, error eos ipsum enim cum provident tempore quisquam facilis eveniet nisi ut eaque.
@@ -19,6 +11,9 @@
 </template>
 
 <script setup>
+    const firebaseUser = useFirebaseUser();
+    console.log('firebaseUser: ' + JSON.stringify(firebaseUser));
+
     const credentials = ref();
 
     const signIn = async () => {
