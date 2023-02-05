@@ -4,36 +4,10 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, ipsa porro dicta quia id nulla fugit. Aliquam, error eos ipsum enim cum provident tempore quisquam facilis eveniet nisi ut eaque.
         </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex exercitationem sed voluptatibus expedita praesentium atque eaque ullam, aspernatur nostrum similique dicta ea quo deleniti aliquid fugiat fugit? Commodi, ipsa!
-        </p>
     </div>
 </template>
 
-<script setup>
-    const firebaseUser = useFirebaseUser();
-    console.log('firebaseUser: ' + JSON.stringify(firebaseUser));
-
-    const credentials = ref();
-
-    const signIn = async () => {
-        const email = "geisera+1@gmail.com";
-        const password = "abcd123456";
-        credentials.value = await signInUser(email, password);
-        console.log("Sign in credentials: ", credentials);
-    }
-
-    const signOut = async () => {
-        credentials.value = await signOutUser();
-    }
-
-    onMounted(async () => {
-        // const email = "geisera+1@gmail.com";
-        // const password = "abcd123456";
-        // const credentials = await createUser(email, password);
-        // console.log("Credentials: ", credentials);
-    });
-</script>
+<script setup></script>
 
 <style scoped>
 h2 {

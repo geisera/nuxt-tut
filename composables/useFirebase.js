@@ -46,5 +46,5 @@ export const initializeUser = async () => {
 export const signOutUser = async () => {
     const auth = getAuth();
     const result = await auth.signOut();
-    console.log('Result: ', result);
+    //console.log('Result: ', result);
 };

@@ -11,7 +11,10 @@
 </template>
 
 <script setup>
-
+definePageMeta({ 
+    // authenticated route guard... 
+    middleware: ["auth"] 
+});
 </script>
 
 <style scoped>

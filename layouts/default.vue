@@ -1,9 +1,5 @@
 <template>
-    <div class="min-h-full">
-        <Navbar />
-        <button v-if="firebaseUser" class="flex btn" @click="signOut">Sign Out</button>
-        <button v-if="!firebaseUser" class="flex btn" @click="signIn">Sign In</button>
-        <Login v-if="!firebaseUser"/>
+    <div class="min-h-full">        
         <div v-if="firebaseUser" class="py-10">
             <header>
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,27 +21,6 @@
   
 <script setup>
 const firebaseUser = useFirebaseUser();
-console.log('firebaseUser: ' + JSON.stringify(firebaseUser));
-
-const credentials = ref();
-
-const signIn = async () => {
-    const email = "geisera+1@gmail.com";
-    const password = "abcd123456";
-    credentials.value = await signInUser(email, password);
-    console.log("Sign in credentials: ", credentials);
-}
-
-const signOut = async () => {
-    credentials.value = await signOutUser();
-}
-
-onMounted(async () => {
-    // const email = "geisera+1@gmail.com";
-    // const password = "abcd123456";
-    // const credentials = await createUser(email, password);
-    // console.log("Credentials: ", credentials);
-});
 </script>
   
   <style lang="css" scoped>
