@@ -2,6 +2,9 @@
     <div>
         <button class="flex btn" @click="signIn">Sign In</button>
         <button class="flex btn" @click="signOut">Sign Out</button>
+        <pre>
+            {{ credentials }}
+        </pre>
         <Login />
     </div>
     <div>
@@ -16,16 +19,17 @@
 </template>
 
 <script setup>
+    const credentials = ref();
+
     const signIn = async () => {
         const email = "geisera+1@gmail.com";
         const password = "abcd123456";
-        const credentials = await signInUser(email, password);
+        credentials.value = await signInUser(email, password);
         console.log("Sign in credentials: ", credentials);
     }
 
     const signOut = async () => {
-        const result = await signOutUser();
-        console.log("Sign out: ", result);
+        credentials.value = await signOutUser();
     }
 
     onMounted(async () => {
