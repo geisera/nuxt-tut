@@ -2,6 +2,7 @@
     <div>
         <button class="flex btn" @click="signIn">Sign In</button>
         <button class="flex btn" @click="signOut">Sign Out</button>
+        <Login />
     </div>
     <div>
         <h2>Home</h2>
